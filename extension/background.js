@@ -1,0 +1,1 @@
+try{chrome.runtime.onMessage.addListener((e,o,t)=>{e.type==="FORM_DETECTED"&&chrome.action.setBadgeText({text:"!",tabId:o.tab.id}).catch(r=>console.log("Badge error:",r))}),chrome.runtime.onInstalled.addListener(()=>{chrome.storage.local.set({isInitialized:!1,walletConnected:!1}).catch(e=>console.log("Storage error:",e))})}catch(e){console.log("Background script error:",e)}
